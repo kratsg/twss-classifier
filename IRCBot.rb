@@ -1,8 +1,5 @@
 require 'cinch'
 require 'cinch/plugins/identify'
-require 'httparty'
-require 'uri'
-require 'pg'
 require_relative 'naive_bayes'
 
 bot = Cinch::Bot.new do
