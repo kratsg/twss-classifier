@@ -9,7 +9,7 @@ That's What She Said classifier
 Training Sets
 -------------
 
-Positive training data sets are from [http://www.twssstories.com/](TWSS Stories). Negative training data sets are from [http://www.fmylife.com/](FMyLife).
+Positive training data sets are from [TWSS Stories](http://www.twssstories.com/). Negative training data sets are from [FMyLife](http://www.fmylife.com/).
 
 Naive Bayes
 -----------
