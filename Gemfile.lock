@@ -1,0 +1,12 @@
+GEM
+  specs:
+    cinch (2.0.10)
+    cinch-identify (1.5.1)
+      cinch (~> 2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cinch
+  cinch-identify
