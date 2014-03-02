@@ -1,2 +1,6 @@
+source 'https://rubygems.org'
 gem 'cinch'
 gem 'cinch-identify'
+gem 'sinatra'
+gem 'thin'
+gem 'json'

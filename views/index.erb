@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
+    <script type="text/javascript">
+        function TWSSCtrl($scope, $http) {
+            $scope.twssText = "are you done yet";
+            $scope.phrase = {
+                "prob": 0.9893426916969923,
+                "twss": true,
+                "phrase": "are you done yet"
+            }
+
+            $scope.classify = function(){
+                $http.get(encodeURI("/"+$scope.twssText)).success(function(data){
+                    $scope.phrase = data;  
+                });
+            }
+        }
+    </script>
+    <style type="text/css">
+        * {
+            padding:10px 5px;   
+        }
+        h1, h2, h3, h4, h5, h6, h7, input {
+            margin: 20px 0 0 0;
+            margin-left: 50px;
+        }
+        .twss-true, .twss-false {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    
+    
+        .twss-true {
+            background-color: rgba(50, 177, 65,0.6); 
+        }
+        
+        .twss-false {
+            background-color: red;   
+        }
+    </style>
+  </head>
+
+  <body ng-controller="TWSSCtrl">
+  
+    <h1>That's What She Said</h1>
+    <h4>A classification system using naive-bayes</h4>
+
+    <input ng-change="classify()" ng-model="twssText" size="30" class="twss-{{phrase.twss}}" />
+    <span ng-show="twssText" class="twss-{{phrase.twss}}">{{phrase.prob}}</span>
+    <br />
+    Link to api for current phrase: <a href="/{{phrase.phrase}}">{{phrase.phrase}}</a>.
+    <br /><br />
+    <h7>Made with love by <a href="https://github.com/kratsg/">Giordon Stark</a></h7>
+  </body>
+
+</html>
